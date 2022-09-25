@@ -17,8 +17,7 @@ npm i
 ```
 npm run dev
 ```
-
-- cd .\bmsceAcm\, and run:
 ```
+cd .\bmsceAcm\
 python manage.py runserver
 ```
