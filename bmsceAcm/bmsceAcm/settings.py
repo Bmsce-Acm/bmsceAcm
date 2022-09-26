@@ -44,10 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_summernote',
     'corsheaders',
-    'events',
-    'posts',
-    'frontend',
-
+    'events.apps.EventsConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +64,9 @@ ROOT_URLCONF = "bmsceAcm.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [
+            BASE_DIR / 'frontend/build'
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / 'frontend/build/static'
 ]
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
