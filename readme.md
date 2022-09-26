@@ -10,13 +10,17 @@ pipenv install -r requirements.txt
 
 - For Node setup:
 ```
-npm i 
+cd .\bmsceAcm\frontend
+npm i
+npm run build
 ```
 
-- Then in the root folder run:
+- For any changes in frontend to appear run this after the changes in frontend
 ```
-npm run dev
+npm run build
 ```
+
+- To start the App
 ```
 cd .\bmsceAcm\
 python manage.py runserver
