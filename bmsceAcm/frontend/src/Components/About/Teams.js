@@ -13,6 +13,9 @@ const Teams = () => {
         <div className='teams__container'>
             <div className='about_bmsce_acm'>
                 <h1>About BMSCE ACM</h1>
+                <div className='acm__desc'>
+                    The chapter strives to broaden its members' practical knowledge by organising a plethora of events including expert talks, reading sessions, useful hands-on workshops, industrial visits, and coding competitions. Our goal is to improve students' computer and scientific knowledge and have them be literate in up-and-coming fields so that they have a competitive advantage in the industry or at research when they graduate. Here at the BMSCE ACM student chapter, we see a world where computing helps solve tomorrow’s problems, where we use our knowledge and skills to advance the profession and make a positive impact
+                </div>
                 <div className='mission_vision'>
                     <h3>Mission:</h3>
                     <ul>
@@ -53,7 +56,7 @@ const Teams = () => {
                                 <div class="team_card">
                                     <div class="team_circle">
                                         <div class="team_imgBox">
-                                            <img src="/images/person.png" alt="" />
+                                            <img src={`${facultyMember.image}`} alt="" />
                                         </div>
                                     </div>
                                     <div class="team_content">
@@ -78,7 +81,7 @@ const Teams = () => {
                                 <div class="team_card">
                                     <div class="team_circle">
                                         <div class="team_imgBox">
-                                            <img src="/images/person.png" alt="" />
+                                            <img src={`${committeeMember.image}`} alt="" />
                                         </div>
                                     </div>
                                     <div class="team_content">

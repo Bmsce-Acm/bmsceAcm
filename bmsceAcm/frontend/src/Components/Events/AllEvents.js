@@ -47,7 +47,7 @@ const AllEvents = () => {
                                             src={event.image}
                                             text={event.title}
                                             label={event.label}
-                                            path={`/event/${event.id}`}
+                                        // path={`/event/${event.id}`}
                                         />
                                     </ul>
                                 )

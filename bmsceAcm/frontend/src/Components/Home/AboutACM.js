@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AboutACM = () => {
     return (
         <div className="about_acm">
-            <h1 className='acm__title'>ACM</h1>
+            <h1 className='acm__title'>Who are we?</h1>
             <div className="acm__description">
                 <p className='acm__desc ad1'>
                     ACM is a global scientific and educational organisation dedicated to advancing the art, science, engineering and application of computing, by fostering the open exchange of information and by promoting the highest professional and ethical standards. The BMSCE ACM student chapter is an initiative by the Department of Machine Learning, B.M.S. College of Engineering with the aim of coalescing the Computer Science, Information Science and Artificial Intelligence communities of BMSCE.
@@ -20,6 +20,14 @@ const AboutACM = () => {
                     </div>
                     <div className='soc_name'>
                         ACM
+                    </div>
+                </Link>
+                <Link to="/" className='bmsce_icon'>
+                    <div className='soc_icon'>
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div className='soc_name'>
+                        BMSCE
                     </div>
                 </Link>
                 <Link to="/" className='insta_icon'>

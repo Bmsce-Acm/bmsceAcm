@@ -13,6 +13,7 @@ import Events from './Components/Events/Events';
 import EventPage from './Components/Events/EventPage';
 import Blogs from './Components/Blogs/Blogs';
 import About from './Components/About/About';
+import Gallery from './Components/Gallery/Gallery';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/event/:id/" element={<EventPage />} />
           <Route exact path="/blogs" element={<Blogs />} />
           <Route exact path="/team" element={<About />} />
+          <Route exact path="/gallery" element={<Gallery />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,11 +1,12 @@
 from django.db import models
+import datetime
 
 
 class Event(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(max_length=500, blank=True)
     event_type = models.CharField(max_length=45, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    event_date = models.DateField(default=datetime.datetime.now)
     thumbnail = models.ImageField(max_length=255, blank=True, null=True)
 
     def __str__(self):

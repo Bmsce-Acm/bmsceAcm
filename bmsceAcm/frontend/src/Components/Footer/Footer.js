@@ -4,63 +4,60 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='footer-container'>
-            <div class='footer-logo'>
-                <Link to='/' className='social-logo'>
-                    BMSCE ACM S-CHAP
-                </Link>
-            </div>
-            <div class='footer-links'>
-                <div className='footer-link-wrapper'>
-                    <div class='footer-link-items'>
-                        <h2>Explore</h2>
-                        <Link to='/'>Home</Link>
-                        <Link to='/events'>Events</Link>
-                        <Link to='/blogs'>Blogs</Link>
-                        <Link to='/aboutus'>Teams</Link>
+            <Link to='/' className='social-logo'>
+                BMSCE ACM Student Chapter
+            </Link>
+            <div className='inner_footer'>
+                <div className='map_container'>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4814935873596!2d77.56333711464487!3d12.941012190875952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158b11e34d2f%3A0x5f4adbdbab8bd80f!2sBMS%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1664289586405!5m2!1sen!2sin" width="300" height="300" loading="lazy">
+                    </iframe>
+                </div>
+                <div className='quick_links'>
+                    <h2>Quick Links</h2>
+                    <Link to='/'>Home</Link>
+                    <Link to='/events'>Events</Link>
+                    <Link to='/aboutus'>Teams</Link>
+                    <Link to='/'>Contact</Link>
+                </div>
+                <div class='social_media'>
+                    <div className='acm_logo'>
+                        <img src="https://res.cloudinary.com/dotl5onov/image/upload/v1664330895/bmsce_acm/acm_nobg_hgtczx.png" width="250px" height="200px" alt='Logo' />
                     </div>
-                    <div class='footer-link-items'>
-                        <h2>Contact Us</h2>
-                        <Link to='/'>Contact</Link>
-                        <Link to='/'>Support</Link>
-                        <Link to='/'>Destinations</Link>
-                        <Link to='/'>Sponsorships</Link>
-                    </div>
-                    <div class='social-media'>
-                        <div class='social-media-wrap'>
-                            <div class='social-icons'>
-                                <Link
-                                    class='social-icon-link facebook'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='Facebook'
-                                >
-                                    <i class='fab fa-facebook-f' />
-                                </Link>
-                                <Link
-                                    class='social-icon-link instagram'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='Instagram'
-                                >
-                                    <i class='fab fa-instagram' />
-                                </Link>
-                                <Link
-                                    class='social-icon-link twitter'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='Twitter'
-                                >
-                                    <i class='fab fa-twitter' />
-                                </Link>
-                                <Link
-                                    class='social-icon-link linkedin'
-                                    to='/'
-                                    target='_blank'
-                                    aria-label='LinkedIn'
-                                >
-                                    <i class='fab fa-linkedin' />
-                                </Link>
-                            </div>
+                    <div class='social-media-wrap'>
+                        <div class='social-icons'>
+                            <Link
+                                class='social-icon-link facebook'
+                                to='/'
+                                target='_blank'
+                                aria-label='Facebook'
+                            >
+                                <i class='fab fa-facebook-f' />
+                            </Link>
+                            <Link
+                                class='social-icon-link instagram'
+                                to='/'
+                                target='_blank'
+                                aria-label='Instagram'
+                            >
+                                <i class='fab fa-instagram' />
+                            </Link>
+                            <Link
+                                class='social-icon-link twitter'
+                                to='/'
+                                target='_blank'
+                                aria-label='Twitter'
+                            >
+                                <i class='fab fa-twitter' />
+                            </Link>
+                            <Link
+                                class='social-icon-link linkedin'
+                                to='/'
+                                target='_blank'
+                                aria-label='LinkedIn'
+                            >
+                                <i class='fab fa-linkedin' />
+                            </Link>
                         </div>
                     </div>
                 </div>

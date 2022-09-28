@@ -52,6 +52,10 @@
     background: #097b68;
 }
 
+.social_list .bmsce_icon:hover {
+    background: #1e6fa7;
+}
+
 .social_list .insta_icon:hover {
     background: #e94475;
 }
