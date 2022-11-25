@@ -1,6 +1,6 @@
-from .models import BlogPost
+from .models import BlogPost, Categories
 from rest_framework import viewsets, permissions
-from .serializers import BlogPostSerializer
+from .serializers import BlogPostSerializer, categoriesSerializer
 
 
 class BlogViewSet(viewsets.ModelViewSet):
@@ -9,3 +9,12 @@ class BlogViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = BlogPostSerializer
+    lookup_field = 'slug'
+
+
+class CategoriesViewSet(viewsets.ModelViewSet):
+    queryset = Categories.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = categoriesSerializer

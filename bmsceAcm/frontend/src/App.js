@@ -12,6 +12,7 @@ import Home from './Components/Home/Home';
 import Events from './Components/Events/Events';
 import EventPage from './Components/Events/EventPage';
 import Blogs from './Components/Blogs/Blogs';
+import BlogPage from './Components/Blogs/BlogPage';
 import About from './Components/About/About';
 import Gallery from './Components/Gallery/Gallery';
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/events" element={<Events />} />
           <Route exact path="/event/:id/" element={<EventPage />} />
           <Route exact path="/blogs" element={<Blogs />} />
+          <Route exact path="/blog/:slug" element={<BlogPage />} />
           <Route exact path="/team" element={<About />} />
           <Route exact path="/gallery" element={<Gallery />} />
         </Routes>

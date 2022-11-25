@@ -1,38 +1,53 @@
-import React from 'react';
-import { getAllBlogs } from '../../Api/blogsApi.js';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from "react-alert";
+import { allPosts, getCategoryName, clearErrors } from '../../Actions/postsActs.js';
+import CardItem from '../Home/CardItem.js';
 
 const AllBlogs = () => {
 
-    const allBlogs = getAllBlogs();
+    const dispatch = useDispatch();
+    const alert = useAlert();
+
+    const { posts, error, loading } = useSelector((state) => state.posts);
+
+    useEffect(() => {
+        if (error) {
+            alert.error(error);
+            dispatch(clearErrors());
+        }
+        dispatch(allPosts());
+    }, [error, dispatch, alert]);
 
     return (
         <div className='blogs_container'>
             <div className="blogs-grid">
-                {
-                    allBlogs.map((blog) => (
-                        <a href="" className="blogs_block">
-                            <div className="blogs left-right-blogs-block">
-                                <div className="blogs-image-container">
-                                    <img src={blog.images[0]} />
-                                </div>
-                                <h1 className="blogs-blue-text-long">
-                                    {blog.title}
-                                </h1>
-                                <div className="blogs-content-box">
-                                    <p>{blog.description}</p>
-                                    <Link to={`/blog/${blog.id}`}>
-                                        <span
-                                            className="goto-blogs"
-                                        >
-                                            Read more &gt;
-                                        </span>
-                                    </Link>
-                                </div>
-                            </div>
-                        </a>
-                    ))
-                }
+                {/* {
+                    <>
+                        <div dangerouslySetInnerHTML={{ __html: purify.sanitize(posts[0]?.content) }} />
+                    </>
+                } */}
+                <div className="events__main">
+                    <div className='cards__container'>
+                        <div className="cards__wrapper">
+                            {
+                                posts.map((blog) => {
+                                    return (
+                                        <ul className="cards__items">
+                                            <CardItem
+                                                src={blog.thumbnail}
+                                                text={blog.title}
+                                                label={blog.category}
+                                                path={`/blog/${blog.slug}`}
+                                            />
+                                        </ul>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

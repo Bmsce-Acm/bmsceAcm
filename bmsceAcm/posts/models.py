@@ -5,6 +5,31 @@ from django.template.defaultfilters import slugify
 
 class Categories(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(default="", null=False)
+
+    def save(self, *args, **kwargs):
+        original_slug = slugify(self.title)
+        queryset = Categories.objects.all().filter(slug__iexact=original_slug).count()
+
+        count = 1
+        slug = original_slug
+        while (queryset):
+            slug = original_slug + '-' + str(count)
+            count += 1
+            queryset = Categories.objects.all().filter(slug__iexact=slug).count()
+
+        self.slug = slug
+
+        if self.featured:
+            try:
+                temp = Categories.objects.get(featured=True)
+                if self != temp:
+                    temp.featured = False
+                    temp.save()
+            except Categories.DoesNotExist:
+                pass
+
+        super(Categories, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name

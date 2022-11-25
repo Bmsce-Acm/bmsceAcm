@@ -10,6 +10,7 @@ urlpatterns = [
     path('events/', TemplateView.as_view(template_name='index.html')),
     path('team/', TemplateView.as_view(template_name='index.html')),
     path('gallery/', TemplateView.as_view(template_name='index.html')),
+    path('blogs/', TemplateView.as_view(template_name='index.html')),
 
     # Backend URLs
     path("admin/", admin.site.urls),
@@ -18,5 +19,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# urlpatterns += [re_path(r'^.*',
-#                         TemplateView.as_view(template_name='index.html'))]
+urlpatterns += [re_path(r'^.*',
+                        TemplateView.as_view(template_name='index.html'))]
