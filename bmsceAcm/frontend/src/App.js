@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/events" element={<Events />} />
           <Route exact path="/event/:id/" element={<EventPage />} />
           <Route exact path="/blogs" element={<Blogs />} />
-          <Route exact path="/blog/:slug" element={<BlogPage />} />
+          <Route exact path="/blog/:id" element={<BlogPage />} />
           <Route exact path="/team" element={<About />} />
           <Route exact path="/gallery" element={<Gallery />} />
         </Routes>

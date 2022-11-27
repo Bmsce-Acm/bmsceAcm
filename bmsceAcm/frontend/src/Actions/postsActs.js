@@ -36,10 +36,10 @@ export const getCategoryName = async (id) => {
     }
 };
 
-export const getPostDetails = (slug) => async (dispatch) => {
+export const getPostDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: GET_POST_REQUEST });
-        let link = `http://localhost:8000/api/blogs/${slug}`;
+        let link = `http://localhost:8000/api/blogs/${id}`;
         const { data } = await axios.get(link);
         dispatch({
             type: GET_POST_SUCCESS,

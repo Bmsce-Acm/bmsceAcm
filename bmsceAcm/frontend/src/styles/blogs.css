@@ -117,6 +117,10 @@
     display: none;
 }
 
+.blog_cnt {
+    margin: 20px 200px;
+}
+
 @media only screen and (min-width: 569px) and (max-width: 880px) {
     .blogs_block {
         position: relative;

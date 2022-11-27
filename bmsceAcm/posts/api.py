@@ -9,7 +9,6 @@ class BlogViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = BlogPostSerializer
-    lookup_field = 'slug'
 
 
 class CategoriesViewSet(viewsets.ModelViewSet):

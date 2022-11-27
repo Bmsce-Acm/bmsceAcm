@@ -23,11 +23,6 @@ const AllBlogs = () => {
     return (
         <div className='blogs_container'>
             <div className="blogs-grid">
-                {/* {
-                    <>
-                        <div dangerouslySetInnerHTML={{ __html: purify.sanitize(posts[0]?.content) }} />
-                    </>
-                } */}
                 <div className="events__main">
                     <div className='cards__container'>
                         <div className="cards__wrapper">
@@ -39,7 +34,7 @@ const AllBlogs = () => {
                                                 src={blog.thumbnail}
                                                 text={blog.title}
                                                 label={blog.category}
-                                                path={`/blog/${blog.slug}`}
+                                                path={`/blog/${blog.id}`}
                                             />
                                         </ul>
                                     )

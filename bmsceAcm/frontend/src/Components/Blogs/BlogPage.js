@@ -12,21 +12,21 @@ const BlogPage = () => {
     const params = useParams();
 
     const { post, error, loading } = useSelector((state) => state.post);
-    const postSlug = params.slug;
+    const postId = params.id;
 
     useEffect(() => {
         if (error) {
             alert.error(error);
             dispatch(clearErrors());
         }
-        dispatch(getPostDetails(postSlug));
-    }, [error, alert, dispatch, postSlug]);
+        dispatch(getPostDetails(postId));
+    }, [error, alert, dispatch, postId]);
 
     return (
-        <div>
+        <div className='blog_cnt'>
             <div dangerouslySetInnerHTML={{ __html: purify.sanitize(post?.content) }} />
         </div>
     )
-}
+};
 
-export default BlogPage
+export default BlogPage;

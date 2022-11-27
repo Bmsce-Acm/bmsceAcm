@@ -5,17 +5,19 @@ import {
 } from '../Constants/eventsConsts.js';
 import { CLEAR_ERROR_MESSAGE } from '../Constants/errConsts.js';
 
-export const eventsReducer = (state = { events: [] }, action) => {
+export const eventsReducer = (state = { events: [], yearsList: [] }, action) => {
     switch (action.type) {
         case ALL_EVENTS_REQUEST:
             return {
                 loading: true,
                 events: [],
+                yearsList: [],
             }
         case ALL_EVENTS_SUCCESS:
             return {
                 loading: false,
-                events: action.payload,
+                events: action.payload.currEve,
+                yearsList: action.payload.years_list,
             }
         case ALL_EVENTS_FAILURE:
             return {
