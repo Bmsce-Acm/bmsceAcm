@@ -2,7 +2,6 @@ import React from 'react';
 import Title from '../Title';
 import HeroSection from './HeroSection';
 import AboutACM from './AboutACM';
-import Cards from './Cards';
 import Contact from './Contact';
 
 const Home = () => {

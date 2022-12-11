@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function Navbar() {
+
+    const location = useLocation();
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
+    const { pathname } = location;
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -16,6 +19,8 @@ function Navbar() {
         }
     };
 
+    const splitLocation = pathname.split("/");
+
     useEffect(() => {
         showButton();
     }, []);
@@ -26,53 +31,57 @@ function Navbar() {
         <>
             <nav className='navbar'>
                 <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                    <a href='/' className='navbar-logo' onClick={closeMobileMenu}>
                         <img src="https://res.cloudinary.com/dotl5onov/image/upload/v1664330895/bmsce_acm/acm_nobg_hgtczx.png" width="150px" height="150px" />
-                    </Link>
+                    </a>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                            <a
+                                href='/'
+                                className={splitLocation[1] === "" ? "nav-links active" : "nav-links"}
+                                onClick={closeMobileMenu}
+                            >
                                 Home
-                            </Link>
+                            </a>
                         </li>
                         <li className='nav-item'>
-                            <Link
-                                to='/events'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                Events
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link
-                                to='/blogs'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                                Posts
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link
-                                to='/team'
-                                className='nav-links'
+                            <a
+                                href='/team'
+                                className={splitLocation[1] === "team" ? "nav-links active" : "nav-links"}
                                 onClick={closeMobileMenu}
                             >
                                 About Us
-                            </Link>
+                            </a>
+                        </li>
+                        <li className='nav-item'>
+                            <a
+                                href='/events'
+                                className={splitLocation[1] === "events" ? "nav-links active" : "nav-links"}
+                                onClick={closeMobileMenu}
+                            >
+                                Events
+                            </a>
+                        </li>
+                        <li className='nav-item'>
+                            <a
+                                href='/blogs'
+                                className={splitLocation[1] === "blogs" ? "nav-links active" : "nav-links"}
+                                onClick={closeMobileMenu}
+                            >
+                                Posts
+                            </a>
                         </li>
                         <li>
-                            <Link
-                                to='/gallery'
-                                className='nav-links'
+                            <a
+                                href='/gallery'
+                                className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
                                 onClick={closeMobileMenu}
                             >
                                 Gallery
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                 </div>

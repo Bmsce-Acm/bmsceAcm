@@ -10,7 +10,6 @@ import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Events from './Components/Events/Events';
-import EventPage from './Components/Events/EventPage';
 import Blogs from './Components/Blogs/Blogs';
 import BlogPage from './Components/Blogs/BlogPage';
 import About from './Components/About/About';
@@ -24,7 +23,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/events" element={<Events />} />
-          <Route exact path="/event/:id/" element={<EventPage />} />
           <Route exact path="/blogs" element={<Blogs />} />
           <Route exact path="/blog/:id" element={<BlogPage />} />
           <Route exact path="/team" element={<About />} />

@@ -15,6 +15,27 @@
   background-color: #fff;
 }
 
+.years_list {
+  padding: 25px 15px;
+}
+
+.years_list button {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 7px;
+  background-color: #ffffff;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.years_list button:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(3, 107, 242);
+  background-color: rgb(136, 183, 246);
+}
+
 .eve__wrapper {
   margin-top: 15px;
 }

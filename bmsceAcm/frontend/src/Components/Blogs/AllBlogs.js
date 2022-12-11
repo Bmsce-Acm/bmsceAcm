@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { allPosts, getCategoryName, clearErrors } from '../../Actions/postsActs.js';
-import CardItem from '../Home/CardItem.js';
+import CardItem from '../Utils/CardItem.js';
 
 const AllBlogs = () => {
 
