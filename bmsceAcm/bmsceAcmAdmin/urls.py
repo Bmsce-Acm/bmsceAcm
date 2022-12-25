@@ -7,4 +7,5 @@ urlpatterns = [
     path('admindashboard/', admin_dashboard, name="admin_dashboard"),
     path('accounts/logout/', logout_view, name='logout'),
     path('eventsadmin/', getEvents, name="eventsadmin"),
+    path('eventcreate/', createEvent, name="eventcreate"),
 ]

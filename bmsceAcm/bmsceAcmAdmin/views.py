@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from pyexpat.errors import messages
-
+from .forms import *
 from events.models import Event
 
 
@@ -47,7 +47,15 @@ def logout_view(request):
     return redirect('/admin/')
 
 
-# get all events list from events
 def getEvents(request):
     allevents = Event.objects.all()
     return render(request, 'eventsAdmin.html', {'allevents': allevents})
+
+
+def createEvent(request):
+    form = EventForm(request.POST or None)
+    if request.method == 'POST':
+        if (form.is_valid()):
+            form.save()
+            return redirect('/admin/eventsadmin/')
+    return render(request, 'createEventAdmin.html', {'form': form})
