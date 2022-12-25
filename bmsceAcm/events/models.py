@@ -8,6 +8,7 @@ class Event(models.Model):
     event_type = models.CharField(max_length=45, blank=True)
     event_date = models.DateField(default=datetime.datetime.now)
     thumbnail = models.ImageField(max_length=255, blank=True, null=True)
+    exploreLink = models.URLField(blank=True)
 
     def __str__(self):
         return f"{self.name}"

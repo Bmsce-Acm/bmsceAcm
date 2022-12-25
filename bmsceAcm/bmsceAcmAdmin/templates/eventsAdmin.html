@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMSCE ACM Events Dashboard</title>
+  </head>
+
+  <body>
+    <div>{% block nav %}{% include 'adminNav.html' %}{% endblock nav %}</div>
+    <h1>ALL EVENTS</h1>
+    {% for event in allevents %}
+    <p>{{event.name}}</p>
+    {% endfor %}
+  </body>
+</html>

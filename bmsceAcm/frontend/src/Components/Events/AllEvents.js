@@ -89,7 +89,9 @@ const AllEvents = () => {
                                                             </div>
                                                             <div className='eve_btn'>
                                                                 <button>
-                                                                    Explore
+                                                                    <a href={event.exploreLink} target="_blank">
+                                                                        Explore
+                                                                    </a>
                                                                 </button>
                                                             </div>
                                                         </div>

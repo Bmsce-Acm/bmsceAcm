@@ -90,20 +90,26 @@
 .eve_btn button {
   padding: 8px;
   background-color: rgb(104, 172, 245);
-  color: black;
-  font-weight: 600;
-  font-size: 20px;
-  text-align: center;
-  text-decoration: none;
   border: none;
   border-radius: 2px;
   box-shadow: 1px 1px 6px 1px #918f8f;
   transition: all 0.2s ease-in-out;
 }
 
+.eve_btn button a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
 .eve_btn button:hover {
   cursor: pointer;
   background-color: rgb(10, 77, 149);
+}
+
+.eve_btn button a:hover {
   color: white;
 }
 

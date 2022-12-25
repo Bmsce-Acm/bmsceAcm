@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from pyexpat.errors import messages
 
+from events.models import Event
+
 
 def admin_login(request):
     try:
@@ -43,3 +45,9 @@ def admin_dashboard(request):
 def logout_view(request):
     logout(request)
     return redirect('/admin/')
+
+
+# get all events list from events
+def getEvents(request):
+    allevents = Event.objects.all()
+    return render(request, 'eventsAdmin.html', {'allevents': allevents})
