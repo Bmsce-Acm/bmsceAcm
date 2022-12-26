@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,7 +47,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'events.apps.EventsConfig',
     'posts.apps.PostsConfig',
-    'bmsceAcmAdmin.apps.BmsceacmadminConfig',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +81,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "bmsceAcm.wsgi.application"
+
+JAZZMIN_SETTINGS = {
+    "site_title": "BMSCE ACM Admin",
+    "site_header": "BMSCE ACM Admin",
+    "site_brand": "BMSCE ACM Admin",
+    "site_logo": None,
+    "site_icon": None,
+    "welcome_sign": "Bmsce Acm Admin Panel",
+    "copyright": "BMSCE ACM",
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",
+}
 
 
 # Database
