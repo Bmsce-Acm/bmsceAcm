@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = ({ isAdmin, username }) => {
 
     const location = useLocation();
     const [click, setClick] = useState(false);
@@ -24,6 +24,10 @@ function Navbar() {
     useEffect(() => {
         showButton();
     }, []);
+
+    console.log(username);
+    console.log(username);
+    console.log(username);
 
     window.addEventListener('resize', showButton);
 
@@ -82,6 +86,39 @@ function Navbar() {
                             >
                                 Gallery
                             </a>
+                        </li>
+                        <li>
+                            {
+                                isAdmin ? (
+                                    <a
+                                        href='/admin'
+                                        className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
+                                        onClick={closeMobileMenu}
+                                    >
+                                        Admin
+                                    </a>
+                                ) : (
+                                    username != null ? (
+                                        <a
+                                            href='/'
+                                            className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
+                                            onClick={closeMobileMenu}
+                                        >
+                                            {username}
+                                        </a>
+                                    )
+                                        :
+                                        (
+                                            <a
+                                                href='/admin/login/?next=/admin/'
+                                                className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
+                                                onClick={closeMobileMenu}
+                                            >
+                                                Login
+                                            </a>
+                                        )
+                                )
+                            }
                         </li>
                     </ul>
                 </div>
