@@ -50,7 +50,7 @@ const AllEvents = () => {
                     <div className='events__section'>
                         <div className='years_list'>
                             {
-                                yearsList.length > 1 &&
+                                yearsList.length > 0 &&
                                 yearsList.map((year) => {
                                     return (
                                         <>
@@ -70,35 +70,48 @@ const AllEvents = () => {
                             <div className='eve__container'>
                                 <div className="eve__wrapper">
                                     {
-                                        events.map((event) => {
-                                            return (
-                                                <div className='mn_eve_crd'>
-                                                    <div className='card_eve'>
-                                                        <div className='eve_img'>
-                                                            <img src={event.thumbnail} />
-                                                        </div>
-                                                        <div className='eve_cnt'>
-                                                            <div className='eve_hd'>
-                                                                <h1>{event.name}</h1>
+                                        events.length > 0 ? (
+                                            events.map((event) => {
+                                                return (
+                                                    <div className='mn_eve_crd'>
+                                                        <div className='card_eve'>
+                                                            <div className='eve_img'>
+                                                                <img src={event.thumbnail} />
                                                             </div>
-                                                            <div className='eve_date'>
-                                                                <span>{event.event_date.substring(8, 10)} {monthMap[event.event_date.substring(5, 7)]} {event.event_date.substring(0, 4)}</span>
-                                                            </div>
-                                                            <div className='eve_desc'>
-                                                                <span>{event.description}</span>
-                                                            </div>
-                                                            <div className='eve_btn'>
-                                                                <button>
-                                                                    <a href={event.exploreLink} target="_blank">
-                                                                        Explore
-                                                                    </a>
-                                                                </button>
+                                                            <div className='eve_cnt'>
+                                                                <div className='eve_hd'>
+                                                                    <h1>{event.name}</h1>
+                                                                </div>
+                                                                <div className='eve_date'>
+                                                                    <span>{event.event_date.substring(8, 10)} {monthMap[event.event_date.substring(5, 7)]} {event.event_date.substring(0, 4)}</span>
+                                                                </div>
+                                                                <div className='eve_desc'>
+                                                                    <span>{event.description}</span>
+                                                                </div>
+                                                                <div className='eve_btn'>
+                                                                    <button>
+                                                                        <a href={event.exploreLink} target="_blank">
+                                                                            Explore
+                                                                        </a>
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                )
+                                            })
+                                        )
+                                            :
+                                            (
+                                                <div className='nothing_to_show'>
+                                                    <div className='no_icon'>
+                                                        <i class="fa-solid fa-box-open"></i>
+                                                    </div>
+                                                    <div className='no_msg'>
+                                                        No events in this year
+                                                    </div>
                                                 </div>
                                             )
-                                        })
                                     }
                                 </div>
                             </div>

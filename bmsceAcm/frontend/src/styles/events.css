@@ -132,6 +132,24 @@
   font-size: 20px;
 }
 
+.nothing_to_show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.no_icon {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.no_msg {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
 @media screen and (max-width: 840px) {
   .card_eve {
     display: flex;
