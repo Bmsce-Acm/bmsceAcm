@@ -8,7 +8,7 @@ const HeroSection = () => {
                 <img src="https://res.cloudinary.com/dotl5onov/image/upload/v1664330895/bmsce_acm/acm_nobg_hgtczx.png" />
             </div>
             <div className='hero-cnt'>
-                <h1>B M S College of Engineering</h1>
+                <h1>B.M.S College of Engineering</h1>
                 <h2>Associate for Computing Machinery</h2>
                 <h3>Student Chapter</h3>
             </div>

@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+    const thisYear = new Date().getFullYear();
+
     return (
         <div className='footer-container'>
-            <Link to='/' className='social-logo'>
+            <a href='/' className='social-logo'>
                 BMSCE ACM Student Chapter
-            </Link>
+            </a>
             <div className='inner_footer'>
                 <div className='map_container'>
                     <iframe
@@ -15,10 +18,10 @@ const Footer = () => {
                 </div>
                 <div className='quick_links'>
                     <h2>Quick Links</h2>
-                    <Link to='/'>Home</Link>
-                    <Link to='/events'>Events</Link>
-                    <Link to='/aboutus'>Teams</Link>
-                    <Link to='/'>Contact</Link>
+                    <a href='/'>Home</a>
+                    <a href='/team'>About Us</a>
+                    <a href='/events'>Events</a>
+                    <a href='/gallery'>Gallery</a>
                 </div>
                 <div class='social_media'>
                     <div className='acm_logo'>
@@ -62,7 +65,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <small className="last">BMSCE ACM © 2022</small>
+            <small className="last">BMSCE ACM © {thisYear}</small>
         </div>
     )
 }

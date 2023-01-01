@@ -92,7 +92,7 @@ const Navbar = ({ isAdmin, username }) => {
                                 isAdmin ? (
                                     <a
                                         href='/admin'
-                                        className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
+                                        className={splitLocation[1] === "amdin" ? "nav-links active" : "nav-links"}
                                         onClick={closeMobileMenu}
                                     >
                                         Admin
@@ -101,7 +101,7 @@ const Navbar = ({ isAdmin, username }) => {
                                     username != null ? (
                                         <a
                                             href='/'
-                                            className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
+                                            className={splitLocation[1] === "admin" ? "nav-links active" : "nav-links"}
                                             onClick={closeMobileMenu}
                                         >
                                             {username}
@@ -111,7 +111,7 @@ const Navbar = ({ isAdmin, username }) => {
                                         (
                                             <a
                                                 href='/admin/login/?next=/admin/'
-                                                className={splitLocation[1] === "gallery" ? "nav-links active" : "nav-links"}
+                                                className={splitLocation[1] === "login" ? "nav-links active" : "nav-links"}
                                                 onClick={closeMobileMenu}
                                             >
                                                 Login

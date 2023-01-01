@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 const AboutACM = () => {
     return (
@@ -14,38 +13,38 @@ const AboutACM = () => {
                 </p>
             </div>
             <div className='social_list'>
-                <Link to="/" className='acm_icon'>
+                <a href="https://www.acm.org/" target="_blank" className='acm_icon'>
                     <div className='soc_icon'>
                         <i class="fa-solid fa-globe"></i>
                     </div>
                     <div className='soc_name'>
                         ACM
                     </div>
-                </Link>
-                <Link to="/" className='bmsce_icon'>
+                </a>
+                <a href="https://www.bmsce.ac.in/" target="_blank" className='bmsce_icon'>
                     <div className='soc_icon'>
                         <i class="fa-solid fa-globe"></i>
                     </div>
                     <div className='soc_name'>
                         BMSCE
                     </div>
-                </Link>
-                <Link to="/" className='insta_icon'>
+                </a>
+                <a href="https://www.instagram.com/acm_bmsce/" target="_blank" className='insta_icon'>
                     <div className='soc_icon'>
                         <i class="fa-brands fa-instagram"></i>
                     </div>
                     <div className='soc_name'>
                         Instagram
                     </div>
-                </Link>
-                <Link to="/" className='linkd_icon'>
+                </a>
+                <a href="/" className='linkd_icon'>
                     <div className='soc_icon'>
                         <i class="fa-brands fa-linkedin"></i>
                     </div>
                     <div className='soc_name'>
                         LinkedIn
                     </div>
-                </Link>
+                </a>
             </div>
         </div>
     );
